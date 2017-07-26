@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = "Welcome to PicasaUI";
+
+  onNotify(message:string):void {
+    alert(message);
+    console.log("dads");
+  }
+
 }
