@@ -1,15 +1,16 @@
-import {Component, Output, EventEmitter, ElementRef, AfterViewInit, VERSION} from '@angular/core';
+import {Component, Output, Input, EventEmitter, ViewEncapsulation, ElementRef, AfterViewInit, VERSION} from '@angular/core';
 declare const gapi: any;
 
 @Component({
   selector: 'google-login',
-  templateUrl: 'google-login.component.html'
+  templateUrl: './google-login.component.html',
+  styleUrls: ['./google-login.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class GoogleLoginComponent implements AfterViewInit {
 
+  @Input() clientId:string;
   @Output() notify: EventEmitter<string> = new EventEmitter<string>();
-
-  private clientId:string = '988700575472-f6pi30kq34f9hjnvqtkghhng1tjbrnjv.apps.googleusercontent.com';
   
   private scope = [
     'profile',
